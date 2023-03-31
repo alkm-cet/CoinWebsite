@@ -1,0 +1,246 @@
+.HomePage {
+    width: 70%;
+    min-height: 100vh;
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.homepagetop {
+    width: 100%;
+    height: 500px;
+    /* border: 1px solid black; */
+
+    display: flex;
+    justify-content: center;
+}
+
+.homepagetopleft {
+    width: 50%;
+    /* border: 1px solid black; */
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    padding-left: 50px;
+}
+
+.homepagetopleft h1 {
+
+    font-size: 50px;
+}
+
+.MarketBTN {
+    cursor: pointer;
+    background-color: #315EFB;
+    color: white;
+    width: 215px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    transition: all .3s ease;
+}
+
+.MarketBTN:hover {
+    font-size: 16px;
+}
+
+/* ------------TOP-RIGHT */
+
+.homepagetopright {
+    width: 50%;
+    /* border: 1px solid black; */
+    height: 100%;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*----------------------------------------------------------------HOMEPAGE MID  */
+
+.homepagemid {
+    width: 100%;
+    height: 600px;
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coinContainer {
+    width: 100%;
+    height: 100%;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coinHeader {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coinHeader p {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* border: 1px solid black; */
+}
+
+/* ---------------coinMain */
+.coinMain {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+    /* background-color: #315EFB; */
+    overflow: auto;
+}
+
+.card {
+    cursor: pointer;
+    /* border: 1px solid black; */
+    display: flex;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .3s ease;
+}
+
+.card:hover {
+    background-color: rgb(233, 233, 233);
+}
+
+.carddiv1,
+.carddiv2,
+.carddiv3,
+.carddiv4 {
+    width: 25%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding-left: 10px;
+}
+
+
+/*----------------------------------------------------------------HOMEPAGE BOTTOM  */
+
+.homepagebottom {
+    width: 70%;
+    height: auto;
+    /* border: 1px solid black; */
+}
+
+
+.gridImages {
+    width: 100%;
+}
+
+.parent {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: #e6e7e771;
+
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 3 / 3;
+    background-color: #e6e7e771;
+
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.div3 {
+    grid-area: 2 / 1 / 4 / 2;
+    background-color: #e6e7e771;
+
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.div4 {
+    grid-area: 3 / 2 / 5 / 3;
+    background-color: #e6e7e771;
+
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.div5 {
+    grid-area: 5 / 2 / 7 / 3;
+    background-color: #e6e7e771;
+
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.div6 {
+    grid-area: 4 / 1 / 7 / 2;
+    background-color: #e6e7e771;
+
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

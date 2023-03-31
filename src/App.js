@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect, useContext } from 'react';
+import CoinContextProvider from './context/CoinContext';
+import Coins from './components/Coins';
+import logo from './images/Logo.svg'
+import HomePage from './pages/Home/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CoinContextProvider>
+      <div className="App">
+
+        <nav>
+          <img src={logo} alt="" />
+          <div className="navmid">
+            <p>Home</p>
+            <p>Market</p>
+          </div>
+        </nav>
+
+        <HomePage />
+
+      </div>
+    </CoinContextProvider>
   );
 }
 
