@@ -17,13 +17,13 @@ function App() {
 
           <nav>
             <Link to='/' style={{ color: 'black', textDecoration: 'none' }}>
-              <img src={logo} alt="" style={{ width: '200px' }} />
+              <img src={logo} alt="" className='logo'/>
             </Link>
             <div className="navmid">
               <Link to='/' style={{ color: 'black', textDecoration: 'none' }}><p>Home</p></Link>
               <Link to='/Market' style={{ color: 'black', textDecoration: 'none' }}><p>Market</p></Link>
             </div>
-            <img src={icons} alt="" />
+            <img src={icons} alt="" className='socials' />
           </nav>
 
           <Routes>

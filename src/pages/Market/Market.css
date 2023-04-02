@@ -9,6 +9,12 @@
     padding: 30px;
 }
 
+@media(max-width:1268px) {
+    .Market {
+        width: 100%;
+    }
+}
+
 /* ------------------------------ marketTop */
 .MarketContainer {
     height: 100vh;
@@ -26,6 +32,12 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+}
+
+@media(max-width:1120px) {
+    .marketdiv1 {
+        grid-area: 1 / 1 / 2 / 4;
+    }
 }
 
 .div1top {
@@ -125,6 +137,13 @@
     align-items: flex-end;
 }
 
+@media(max-width:1120px) {
+    .marketdiv2 {
+        grid-area: 2 / 1 / 4 / 4;
+    }
+}
+
+
 .marketdiv2header {
     padding: 20px;
     width: calc(100% - 40px);
@@ -203,6 +222,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+@media(max-width:1120px) {
+    .marketdiv3 {
+        grid-area: 4 / 1 / 5 / 3;
+    }
 }
 
 .marketdiv3-1 {
@@ -350,6 +375,12 @@ select {
     background-color: white;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+@media(max-width:1120px) {
+    .marketdiv4 {
+        grid-area: 4 / 3 / 5 / 3;
+    }
 }
 
 .marketdiv4 h2 {

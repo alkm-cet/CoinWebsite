@@ -5,8 +5,15 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 50px;
+}
+
+@media(max-width:1268px) {
+    .HomePage {
+        width: 100%;
+    }
 }
 
 .homepagetop {
@@ -16,6 +23,13 @@
 
     display: flex;
     justify-content: center;
+}
+
+@media(max-width:550px) {
+    .homepagetop {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .homepagetopleft {
@@ -31,9 +45,31 @@
     padding-left: 50px;
 }
 
-.homepagetopleft h1 {
+@media(max-width:550px) {
+    .homepagetopleft {
+        padding: 10px;
+        width: 100%;
+        align-items: center;
+    }
+}
 
+
+.homepagetopleft h1 {
     font-size: 50px;
+}
+
+@media(max-width:768px) {
+    .homepagetopleft h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+@media(max-width:768px) {
+    .homepagetopleft p {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .MarketBTN {
@@ -87,6 +123,15 @@
     align-items: center;
 }
 
+
+@media(max-width:550px) {
+    .coinContaine {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+}
+
+
 .coinHeader {
     /* border: 1px solid black; */
     width: 100%;
@@ -98,6 +143,14 @@
     align-items: center;
     justify-content: center;
 }
+
+@media(max-width:550px) {
+    .coinHeader {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+}
+
 
 .coinHeader p {
     width: 100%;
@@ -118,6 +171,13 @@
     overflow: auto;
 }
 
+@media(max-width:550px) {
+    .coinMain {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+}
+
 .card {
     /* border: 1px solid black; */
     display: flex;
@@ -129,6 +189,21 @@
     justify-content: space-between;
     transition: all .3s ease;
 }
+
+@media(max-width:768px) {
+    .card {
+        justify-content: center;
+    }
+}
+
+@media(max-width:620px) {
+    .card {
+        flex-direction: column;
+        height: 150px;
+        /* border: 1px solid black; */
+    }
+}
+
 
 .card:hover {
     background-color: rgb(233, 233, 233);
@@ -149,6 +224,31 @@
     padding-left: 10px;
 }
 
+@media(max-width:768px) {
+    .carddiv4 {
+        display: none;
+    }
+}
+
+@media(max-width:768px) {
+
+    .carddiv1,
+    .carddiv2,
+    .carddiv3 {
+        width: 50%;
+
+    }
+}
+
+@media(max-width:620px) {
+
+    .carddiv1,
+    .carddiv2,
+    .carddiv3 {
+        justify-content: center;
+    }
+}
+
 .infoBTN {
     cursor: pointer;
     width: 50px;
@@ -167,6 +267,12 @@
     width: 70%;
     height: auto;
     /* border: 1px solid black; */
+}
+
+@media(max-width:1268px) {
+    .homepagebottom {
+        width: 100%;
+    }
 }
 
 
