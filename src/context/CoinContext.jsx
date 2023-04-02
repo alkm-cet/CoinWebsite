@@ -7,16 +7,16 @@ function CoinContextProvider({ children }) {
 
     const [coins, setCoins] = useState([]);
     const [buyedCoin, setBuyedCoin] = useState([])
+    const [watchList, setWatchList] = useState([])
     const [money, setMoney] = useState(10000);
     const [initial, setInitial] = useState();
 
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=1&sparkline=false&locale=en'
+    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&locale=en'
 
     useEffect(() => {
         try {
             axios.get(url).then((response) => {
                 setCoins(response.data)
-                console.log(response.data)
             })
         }
         catch (err) {
@@ -24,10 +24,24 @@ function CoinContextProvider({ children }) {
         }
     }, [])
 
+    if (!coins) {
+        return <div>Loading...</div>
+    }
+
+
     const handleBuy = (coin) => {
         setBuyedCoin([...buyedCoin, coin])
         setMoney(money - coin.current_price)
         localStorage.setItem('buyedCoin', buyedCoin)
+    }
+
+    const handleWatchList = (coin) => {
+        const listedCoin = coins.find((item) => item.id === coin.id)
+        if (listedCoin) {
+            setWatchList([...watchList.filter(item => item.id !== coin.id), listedCoin])
+        } else {
+            setWatchList([...watchList, listedCoin])
+        }
     }
 
 
@@ -63,7 +77,9 @@ function CoinContextProvider({ children }) {
                 setMoney,
                 handleBuy,
                 initial,
-                setInitial
+                setInitial,
+                watchList,
+                handleWatchList
             }}>
             {children}
         </CoinContext.Provider>

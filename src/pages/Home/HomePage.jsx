@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import './HomePage.css';
+//ROUTER
+import { Link } from 'react-router-dom'
 //IMAGES
 import wallet from '../../images/wallet.png'
 import img1 from '../../images/img1.png'
@@ -32,7 +34,9 @@ function HomePage() {
                 <div className="homepagetopleft">
                     <h1>Create Your First Decentralized Wallet</h1>
                     <p>The easiest wat to manage multiple cyrptocurrency assets</p>
-                    <button className='MarketBTN'>Market</button>
+                    <Link to='/Market' style={{ color: 'black', textDecoration: 'none' }}>
+                        <button className='MarketBTN'>Market</button>
+                    </Link>
                 </div>
 
                 <div className="homepagetopright" style={{ backgroundImage: `url(${wallet})` }}>
@@ -49,14 +53,17 @@ function HomePage() {
                         <p>Name</p>
                         <p>Price</p>
                         <p>24h %</p>
+                        <p>24h High</p>
+                        <p>24h Low</p>
                         <p>Market Cap</p>
                     </div>
 
                     <div className="coinMain">
                         {
-                            coins.map((coin) =>
+                            coins.slice(0, 7).map((coin) =>
                                 <div className="card" key={coin.id}>
-                                    <div className="carddiv1">
+                                    <div className="carddiv1" style={{ gap: '20px' }}>
+                                        {coin?.market_cap_rank}
                                         <img src={coin.image} alt="" style={{ width: '50px', height: '50px' }} />
                                         <p>{coin?.name}</p>
                                     </div>
@@ -69,11 +76,22 @@ function HomePage() {
                                                 ? <img src={arrowup} style={{ width: '15px' }}></img>
                                                 : <img src={arrowdown} style={{ width: '15px' }}></img>
                                         }
-                                        <b>{(coin?.price_change_percentage_24h).toFixed(2)}</b>
+                                        {
+                                            coin?.price_change_percentage_24h >= 0
+                                                ? <b style={{ color: '#00DBBB' }}>{(coin?.price_change_percentage_24h).toFixed(2)}</b>
+                                                : <b style={{ color: '#FF6174' }}>{(coin?.price_change_percentage_24h).toFixed(2)}</b>
+                                        }
+                                    </div>
+                                    <div className="carddiv4">
+                                        <b>${(coin?.high_24h).toLocaleString()}</b>
+                                    </div>
+                                    <div className="carddiv4">
+                                        <b>${(coin?.low_24h).toLocaleString()}</b>
                                     </div>
                                     <div className="carddiv4">
                                         <b>${(coin?.market_cap).toLocaleString()}</b>
                                     </div>
+                                    {/* <Link to={`/Market/${coin.id}`}><button className='infoBTN'>Info</button></Link> */}
                                 </div>
                             )
                         }
